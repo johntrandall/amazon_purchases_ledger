@@ -1,17 +1,16 @@
 require "amazon_csv_combiner/version"
+require "amazon_csv_combiner/merge_service"
 
 require 'thor'
 
 module AmazonCsvCombiner
   # Your code goes here...
   class CLI < Thor
-    desc "hello world", "my first cli yay"
-    def hello(name)
-      if name == "Heisenberg"
-        puts "you are goddman right"
-      else
-        puts "say my name"
-      end
+
+    desc "merge", "merges csvs"
+
+    def merge(csv_path_1, csv_path_2)
+      AmazonCsvCombiner::MergeService.new(csv_path_1,csv_path_2).perform
     end
 
   end
