@@ -10,8 +10,6 @@ RSpec.describe AmazonCsvCombiner do
 
     describe '#merge' do
       it 'calls MergeService' do
-        path1 = 'spec/fixtures/orders.csv'
-        path2 = 'spec/fixtures/items.csv'
         expect(AmazonCsvCombiner::MergeService).to receive(:new).with(path1, path2).and_call_original
         expect_any_instance_of(AmazonCsvCombiner::MergeService).to receive(:perform)
         AmazonCsvCombiner::CLI.new.merge(path1, path2)
