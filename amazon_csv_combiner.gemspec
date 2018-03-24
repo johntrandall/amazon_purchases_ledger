@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["John Randall"]
   spec.email         = ["john@johnrandall.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Combine and Amazon orders csv and items csv into a csv suitable for importing into a financial ledger.}
+  spec.description   = %q{Takes and Amazon orders csv and items csv as input. Generates and output csv suitable for importing into a financial program.}
+  spec.homepage      = ""
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
