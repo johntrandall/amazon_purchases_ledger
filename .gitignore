@@ -11,3 +11,5 @@
 .rspec_status
 
 .idea/**
+
+output.csv
