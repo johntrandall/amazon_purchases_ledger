@@ -10,7 +10,7 @@ module AmazonCsvCombiner
     desc "merge", "merges csvs"
 
     def merge(csv_path_1, csv_path_2)
-      AmazonCsvCombiner::MergeService.new(csv_path_1,csv_path_2).perform
+      AmazonCsvCombiner::MergeService.new(csv_path_1, csv_path_2).perform
     end
 
   end
