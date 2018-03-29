@@ -14,15 +14,14 @@ RSpec.describe AmazonCsvCombiner::Order do
     it 'works' do
       expect { subject.output_row }.not_to raise_error
     end
-
-    it 'includes the things' do
-
-      #date
+    it 'includes the #date' do
       expect(subject.output_row).to include('12/31/17')
-      #payment_account
+    end
+    it 'includes the #payment account' do
       expect(subject.output_row).to include('Visa - 4033')
-      #amount
-      # expect(subject.output_row).to include('AMOUNT')
+    end
+    it 'includes the sum of the payment totals' do
+      expect(subject.output_row).to include('$30.06')
     end
   end
 
@@ -30,14 +29,12 @@ RSpec.describe AmazonCsvCombiner::Order do
     it 'works' do
       expect { subject.memo }.not_to raise_error
     end
-
-    it 'includes the things' do
-      #shipment
+    it 'includes the shipment things' do
       expect(subject.memo).to include('Shipment: AMZN_US(TB')
       expect(subject.memo.scan(/\* \$/).count).to eq(4)
       expect(subject.memo).to include('--------------------')
-
-      #Item
+    end
+    it 'includes the item things' do
       expect(subject.memo).to include('$9.98')
       expect(subject.memo).to include('2x')
       expect(subject.memo).to include('Mesh Stuff Bag')

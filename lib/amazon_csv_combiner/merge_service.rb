@@ -11,7 +11,7 @@ module AmazonCsvCombiner
 
     def perform
       CSV.open("output.csv", "wb") do |csv|
-        # csv << output_header_row
+        csv << Order::OUTPUT_HEADER_ROW
         orders.each do |order|
           csv << order.output_row
         end

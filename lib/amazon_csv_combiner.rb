@@ -3,6 +3,7 @@ require "amazon_csv_combiner/merge_service"
 require "amazon_csv_combiner/order"
 require "amazon_csv_combiner/shipment"
 require "amazon_csv_combiner/item"
+require "amazon_csv_combiner/helpers/money_parser"
 
 require 'thor'
 

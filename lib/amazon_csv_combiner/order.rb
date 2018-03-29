@@ -23,6 +23,13 @@ module AmazonCsvCombiner
       @items_csv = items_csv
     end
 
+    OUTPUT_HEADER_ROW = [
+      :order_date,
+      :payment_account,
+      :amount,
+      :memo
+    ]
+
     def output_row
       [
         order_date,
@@ -62,7 +69,14 @@ module AmazonCsvCombiner
     end
 
     def amount
-      shipment_rows.sum { |row| row[:total_charged].to_f }
+      shipment_rows.map { |row| row[:total_charged]&.gsub('$', '')&.to_d }
+        .compact
+        .sum.to_f.to_s.prepend('$')
+    end
+
+    def money_from_string(currency_notation_string)
+      raise unless currency_notation_string && currency_notation_string != ''
+      MoneyParser.parse_to_decimal(currency_notation_string)
     end
 
   end
