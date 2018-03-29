@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     amazon_csv_combiner (0.1.0)
-      pry
       thor
 
 GEM
@@ -36,6 +35,7 @@ PLATFORMS
 DEPENDENCIES
   amazon_csv_combiner!
   bundler (~> 1.16)
+  pry
   rake (~> 10.0)
   rspec (~> 3.0)
 

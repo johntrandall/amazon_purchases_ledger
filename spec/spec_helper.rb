@@ -11,6 +11,14 @@ module FixtureCsvPaths
   def path2
     'spec/fixtures/items.csv'
   end
+
+  def orders_csv
+    AmazonCsvCombiner::MergeService.new(path1, path2).orders_csv
+  end
+
+  def items_csv
+    AmazonCsvCombiner::MergeService.new(path1, path2).items_csv
+  end
 end
 
 RSpec.configure do |config|
