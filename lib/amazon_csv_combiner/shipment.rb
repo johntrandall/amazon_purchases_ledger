@@ -26,6 +26,11 @@ module AmazonCsvCombiner
       ].join("\n")
     end
 
+    def total_charged
+      return nil unless @order_csv_row[:total_charged]
+      @order_csv_row[:total_charged].gsub('$', '').to_d
+    end
+
     def items
       AmazonCsvCombiner::Item::Factory.new(carrier_tracking: @order_csv_row[:carrier_name__tracking_number],
                                            items_csv: @items_csv)
