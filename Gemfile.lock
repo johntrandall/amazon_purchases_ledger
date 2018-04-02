@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amazon_purchases_ledger (0.1.0)
+    amazon_purchases_ledger (0.0.1)
       thor (~> 0.20)
 
 GEM
