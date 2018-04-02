@@ -13,7 +13,7 @@ module AmazonPurchasesLedger
   # Your code goes here...
   class CLI < Thor
 
-    desc "merge", "merges csvs"
+    desc 'merge [orders.csv] [items.csv]', 'render transactions CSV at user\'s home_dir'
 
     def merge(csv_path_1, csv_path_2)
       AmazonPurchasesLedger::MergeService.new(csv_path_1, csv_path_2).perform
