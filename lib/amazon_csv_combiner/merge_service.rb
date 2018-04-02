@@ -33,9 +33,9 @@ module AmazonCsvCombiner
     end
 
     def output_header_row
-      # ['output hear row here']
-      # OutputRowsGenerator.header_rows
+      AmazonCsvCombiner::Order::OUTPUT_HEADER_ROW
     end
+
 
     private
     class InvalidInputCsvs < StandardError;

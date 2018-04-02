@@ -23,7 +23,7 @@ module FixtureCsvDetails
   def order_id
     order_id_shipped
   end
-  
+
   def order_id_shipped
     '114-6538430-6195405'
   end
