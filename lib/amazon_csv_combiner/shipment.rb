@@ -1,3 +1,6 @@
+require 'bigdecimal'
+require 'bigdecimal/util'
+
 module AmazonCsvCombiner
   class Shipment
     def initialize(items_csv:, order_csv_row:)

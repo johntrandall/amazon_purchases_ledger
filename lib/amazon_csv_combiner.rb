@@ -6,7 +6,6 @@ require "amazon_csv_combiner/shipment"
 require "amazon_csv_combiner/shipment/factory"
 require "amazon_csv_combiner/item"
 require "amazon_csv_combiner/item/factory"
-require "amazon_csv_combiner/helpers/money_parser"
 
 require 'thor'
 

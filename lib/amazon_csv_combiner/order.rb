@@ -64,11 +64,6 @@ module AmazonCsvCombiner
         .sum.to_f.to_s.prepend('$')
     end
 
-    def money_from_string(currency_notation_string)
-      raise unless currency_notation_string && currency_notation_string != ''
-      MoneyParser.parse_to_decimal(currency_notation_string)
-    end
-
   end
 
 end

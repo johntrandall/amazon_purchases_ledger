@@ -11,7 +11,7 @@ module AmazonCsvCombiner
 
     def perform
       CSV.open("output.csv", "wb") do |csv|
-        csv << Order::OUTPUT_HEADER_ROW
+        csv << output_header_row
         orders.each do |order|
           csv << order.output_row
         end
@@ -36,16 +36,15 @@ module AmazonCsvCombiner
       AmazonCsvCombiner::Order::OUTPUT_HEADER_ROW
     end
 
-
     private
-    class InvalidInputCsvs < StandardError;
-    end
+      class InvalidInputCsvs < StandardError;
+      end
 
-    def csvs_with_header(header)
-      csvs = @csvs.select { |csv| csv.headers.include?(header) }
-      raise InvalidInputCsvs unless csvs.count == 1
-      csvs.first
-    end
+      def csvs_with_header(header)
+        csvs = @csvs.select { |csv| csv.headers.include?(header) }
+        raise InvalidInputCsvs unless csvs.count == 1
+        csvs.first
+      end
 
   end
 end
