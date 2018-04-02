@@ -2,7 +2,7 @@ module AmazonPurchasesLedger
   class Order
     attr_reader :order_id
 
-    def initialize(order_id: order_id, orders_csv: @orders_csv, items_csv: @items_csv)
+    def initialize(order_id:, orders_csv:, items_csv:)
       @order_id = order_id
       @orders_csv = orders_csv
       @items_csv = items_csv
