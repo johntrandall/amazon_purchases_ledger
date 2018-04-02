@@ -11,7 +11,7 @@ To create the orders and items CSVs needed as input, see https://www.amazon.com/
 
 ## TODO: 
 
-[ ] specify output folder and filename
+[ ] specify output folder
 
 [ ] Create a scraper that automatically downloads the source CSVs. See https://github.com/kyamaguchi/amazon_auth 
 
