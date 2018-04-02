@@ -1,6 +1,5 @@
 RSpec.describe AmazonCsvCombiner::Shipment do
 
-  let(:order_id) { orders_csv.first[:order_id] }
   let(:order_csv_row) { orders_csv.first }
 
   subject { described_class.new(order_csv_row: order_csv_row, items_csv: items_csv) }

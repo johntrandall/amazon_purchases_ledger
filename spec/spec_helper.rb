@@ -3,7 +3,7 @@ require "amazon_csv_combiner"
 require 'pry'
 
 
-module FixtureCsvPaths
+module FixtureCsvDetails
   def path1
     'spec/fixtures/orders.csv'
   end
@@ -19,6 +19,18 @@ module FixtureCsvPaths
   def items_csv
     AmazonCsvCombiner::MergeService.new(path1, path2).items_csv
   end
+
+  def order_id
+    order_id_shipped
+  end
+  
+  def order_id_shipped
+    '114-6538430-6195405'
+  end
+
+  def order_id_unshipped
+    '114-9487673-0555460'
+  end
 end
 
 RSpec.configure do |config|
@@ -32,7 +44,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  config.include FixtureCsvPaths
+  config.include FixtureCsvDetails
 end
 
 
