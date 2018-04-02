@@ -9,8 +9,9 @@ module AmazonPurchasesLedger
       @csvs = [CSV.table(@csv_path_1, headers: true), CSV.table(@csv_path_2, headers: true)]
     end
 
+    # TODO: Fix filepath (strings are not paths). Also, make this cross platform.
     def perform
-      CSV.open("amazon_transactions_#{timestamp}.csv", "wb") do |csv|
+      CSV.open("#{Dir.home}/Desktop/amazon_transactions_#{timestamp}.csv", "wb") do |csv|
         csv << output_header_row
         orders.each do |order|
           csv << order.output_row

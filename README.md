@@ -1,6 +1,6 @@
 # Amazon Purchases Ledger
 
-This gem takes order and item CSVs downloaded from your Amazon account as input, and parses those into a transactions CSV. 
+This gem takes order and item CSVs downloaded from your Amazon account as input, and parses those into a transactions CSV which is created in your home folder. 
 
 This output file is suitable for importing into a financial ledger system, such as Bankivity or Quicken. It contains fields for for transaction date, transaction amount, source account, and a memo. 
 
@@ -10,8 +10,6 @@ To create the orders and items CSVs needed as input, see https://www.amazon.com/
 
 
 ## TODO: 
-
-[ ] specify output folder
 
 [ ] Create a scraper that automatically downloads the source CSVs. See https://github.com/kyamaguchi/amazon_auth 
 
@@ -44,7 +42,7 @@ After installing, bundle should be available at the command line via
 
     $ amazon_purchases_ledger
 
-Pass in the filepaths to an Amazon orders csv and an Amazon items csv, and the gem will create an ```transactions.csv```:
+Pass in the filepaths to an Amazon orders csv and an Amazon items csv, and the gem will create a ```transactions.csv``` in the user's home folder:
 
     $ amazon_purchases_ledger [orders csv filepath] [items csv filepath]
 
