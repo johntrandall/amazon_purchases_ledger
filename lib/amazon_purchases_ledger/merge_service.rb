@@ -10,7 +10,7 @@ module AmazonPurchasesLedger
     end
 
     def perform
-      CSV.open("output.csv", "wb") do |csv|
+      CSV.open("amazon_transactions_#{timestamp}.csv", "wb") do |csv|
         csv << output_header_row
         orders.each do |order|
           csv << order.output_row
@@ -37,14 +37,18 @@ module AmazonPurchasesLedger
     end
 
     private
-      class InvalidInputCsvs < StandardError;
-      end
+    def timestamp
+      Time.now.strftime('%Y-%m-%d_%H-%M-%S')
+    end
 
-      def csvs_with_header(header)
-        csvs = @csvs.select { |csv| csv.headers.include?(header) }
-        raise InvalidInputCsvs unless csvs.count == 1
-        csvs.first
-      end
+    class InvalidInputCsvs < StandardError;
+    end
+
+    def csvs_with_header(header)
+      csvs = @csvs.select { |csv| csv.headers.include?(header) }
+      raise InvalidInputCsvs unless csvs.count == 1
+      csvs.first
+    end
 
   end
 end

@@ -35,8 +35,8 @@ module AmazonPurchasesLedger
 
     def shipments
       AmazonPurchasesLedger::Shipment::Factory.new(order_id: @order_id,
-                                               orders_csv: @orders_csv,
-                                               items_csv: @items_csv)
+                                                   orders_csv: @orders_csv,
+                                                   items_csv: @items_csv)
         .shipments
     end
 
@@ -45,7 +45,6 @@ module AmazonPurchasesLedger
     end
 
     private
-
     def shipment_rows
       @orders_csv.select { |row| row[:order_id] == @order_id }
     end
