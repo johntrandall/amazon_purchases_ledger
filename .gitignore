@@ -13,3 +13,4 @@
 .idea/**
 
 output.csv
+*transactions*.csv
