@@ -4,15 +4,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "amazon_purchases_ledger/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "amazon_purchases_ledger"
+  spec.name          = 'amazon_purchases_ledger'
   spec.version       = AmazonPurchasesLedger::VERSION
-  spec.authors       = ["John Randall"]
-  spec.email         = ["john@johnrandall.com"]
+  spec.authors       = ['John Randall']
+  spec.email         = ['john@johnrandall.com']
 
   spec.summary       = %q{Combine and Amazon orders csv and items csv into a csv suitable for importing into a financial ledger.}
   spec.description   = %q{Takes and Amazon orders csv and items csv as input. Generates and output csv suitable for importing into a financial program.}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = 'https://github.com/johntrandall/amazon_purchases_ledger'
+  spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency 'zombie_scout'
-  spec.add_dependency 'thor'
+  spec.add_development_dependency "pry", "~> 0.11"
+  spec.add_development_dependency 'zombie_scout', '~> 0.0.5'
+  spec.add_dependency 'thor', '~> 0.20'
 end
