@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     amazon_purchases_ledger (0.1.0)
-      thor
+      thor (~> 0.20)
 
 GEM
   remote: https://rubygems.org/
@@ -50,10 +50,10 @@ PLATFORMS
 DEPENDENCIES
   amazon_purchases_ledger!
   bundler (~> 1.16)
-  pry
+  pry (~> 0.11)
   rake (~> 10.0)
   rspec (~> 3.0)
-  zombie_scout
+  zombie_scout (~> 0.0.5)
 
 BUNDLED WITH
    1.16.1
