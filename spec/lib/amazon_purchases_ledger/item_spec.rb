@@ -1,4 +1,4 @@
-RSpec.describe AmazonCsvCombiner::Item do
+RSpec.describe AmazonPurchasesLedger::Item do
 
   let(:item_csv_row) { items_csv.first }
 

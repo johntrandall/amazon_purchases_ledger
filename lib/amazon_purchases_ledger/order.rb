@@ -1,4 +1,4 @@
-module AmazonCsvCombiner
+module AmazonPurchasesLedger
   class Order
     attr_reader :order_id
 
@@ -34,7 +34,7 @@ module AmazonCsvCombiner
     end
 
     def shipments
-      AmazonCsvCombiner::Shipment::Factory.new(order_id: @order_id,
+      AmazonPurchasesLedger::Shipment::Factory.new(order_id: @order_id,
                                                orders_csv: @orders_csv,
                                                items_csv: @items_csv)
         .shipments

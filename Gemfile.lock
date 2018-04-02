@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amazon_csv_combiner (0.1.0)
+    amazon_purchases_ledger (0.1.0)
       thor
 
 GEM
@@ -48,7 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  amazon_csv_combiner!
+  amazon_purchases_ledger!
   bundler (~> 1.16)
   pry
   rake (~> 10.0)

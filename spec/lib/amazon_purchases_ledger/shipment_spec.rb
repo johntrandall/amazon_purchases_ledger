@@ -1,4 +1,4 @@
-RSpec.describe AmazonCsvCombiner::Shipment do
+RSpec.describe AmazonPurchasesLedger::Shipment do
 
   let(:order_csv_row) { orders_csv.first }
 
@@ -23,7 +23,7 @@ RSpec.describe AmazonCsvCombiner::Shipment do
 
   describe '#items' do
     it 'works' do
-      expect(subject.items.first.class).to eq(AmazonCsvCombiner::Item)
+      expect(subject.items.first.class).to eq(AmazonPurchasesLedger::Item)
     end
     it 'returns the correct nubmer of items' do
       expect(subject.items.count).to eq(1)

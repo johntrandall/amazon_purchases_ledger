@@ -1,4 +1,4 @@
-RSpec.describe AmazonCsvCombiner::Order do
+RSpec.describe AmazonPurchasesLedger::Order do
 
   subject { described_class.new(order_id: order_id,
                                 orders_csv: orders_csv,
@@ -49,13 +49,13 @@ RSpec.describe AmazonCsvCombiner::Order do
 
   describe '#shipments' do
     it 'works' do
-      expect(subject.shipments.first.class).to eq(AmazonCsvCombiner::Shipment)
+      expect(subject.shipments.first.class).to eq(AmazonPurchasesLedger::Shipment)
     end
   end
 
   describe '#items' do
     it 'works' do
-      expect(subject.items.first.class).to eq(AmazonCsvCombiner::Item)
+      expect(subject.items.first.class).to eq(AmazonPurchasesLedger::Item)
     end
     it 'returns the correct nubmer of items' do
       expect(subject.items.count).to eq(4)

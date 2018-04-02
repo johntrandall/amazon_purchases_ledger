@@ -1,4 +1,4 @@
-RSpec.describe AmazonCsvCombiner::Shipment::Factory do
+RSpec.describe AmazonPurchasesLedger::Shipment::Factory do
 
   it 'works' do
     expect { described_class }.not_to raise_error
@@ -12,7 +12,7 @@ RSpec.describe AmazonCsvCombiner::Shipment::Factory do
     end
 
     it 'returns shipements' do
-      expect(subject.map(&:class).uniq).to eq [AmazonCsvCombiner::Shipment]
+      expect(subject.map(&:class).uniq).to eq [AmazonPurchasesLedger::Shipment]
     end
   end
 

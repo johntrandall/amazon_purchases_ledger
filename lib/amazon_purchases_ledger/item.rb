@@ -1,4 +1,4 @@
-module AmazonCsvCombiner
+module AmazonPurchasesLedger
   class Item
     def initialize(items_csv_row:)
       @items_csv_row = items_csv_row

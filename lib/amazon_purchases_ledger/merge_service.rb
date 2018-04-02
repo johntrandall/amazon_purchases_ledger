@@ -1,6 +1,6 @@
 require 'csv'
 
-module AmazonCsvCombiner
+module AmazonPurchasesLedger
   class MergeService
 
     def initialize(csv_path_1, csv_path_2)
@@ -19,8 +19,8 @@ module AmazonCsvCombiner
     end
 
     def orders
-      AmazonCsvCombiner::Order::Factory.new(orders_csv: orders_csv,
-                                            items_csv: items_csv)
+      AmazonPurchasesLedger::Order::Factory.new(orders_csv: orders_csv,
+                                                items_csv: items_csv)
         .orders
     end
 
@@ -33,7 +33,7 @@ module AmazonCsvCombiner
     end
 
     def output_header_row
-      AmazonCsvCombiner::Order::OUTPUT_HEADER_ROW
+      AmazonPurchasesLedger::Order::OUTPUT_HEADER_ROW
     end
 
     private

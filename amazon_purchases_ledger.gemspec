@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "amazon_csv_combiner/version"
+require "amazon_purchases_ledger/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "amazon_csv_combiner"
-  spec.version       = AmazonCsvCombiner::VERSION
+  spec.name          = "amazon_purchases_ledger"
+  spec.version       = AmazonPurchasesLedger::VERSION
   spec.authors       = ["John Randall"]
   spec.email         = ["john@johnrandall.com"]
 

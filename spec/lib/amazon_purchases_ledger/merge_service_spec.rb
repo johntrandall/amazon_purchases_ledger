@@ -1,4 +1,4 @@
-RSpec.describe AmazonCsvCombiner::MergeService do
+RSpec.describe AmazonPurchasesLedger::MergeService do
 
   it "works" do
     expect { described_class }.not_to raise_error
@@ -36,7 +36,7 @@ RSpec.describe AmazonCsvCombiner::MergeService do
     end
 
     it 'returns orders' do
-      expect(subject.map(&:class).uniq).to eq [AmazonCsvCombiner::Order]
+      expect(subject.map(&:class).uniq).to eq [AmazonPurchasesLedger::Order]
     end
   end
 

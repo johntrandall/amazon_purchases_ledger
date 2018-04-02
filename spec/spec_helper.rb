@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "amazon_csv_combiner"
+require "amazon_purchases_ledger"
 require 'pry'
 
 
@@ -13,11 +13,11 @@ module FixtureCsvDetails
   end
 
   def orders_csv
-    AmazonCsvCombiner::MergeService.new(path1, path2).orders_csv
+    AmazonPurchasesLedger::MergeService.new(path1, path2).orders_csv
   end
 
   def items_csv
-    AmazonCsvCombiner::MergeService.new(path1, path2).items_csv
+    AmazonPurchasesLedger::MergeService.new(path1, path2).items_csv
   end
 
   def order_id

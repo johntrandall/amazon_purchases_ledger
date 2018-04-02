@@ -1,4 +1,4 @@
-module AmazonCsvCombiner
+module AmazonPurchasesLedger
   class Order
     class Factory
       def initialize(orders_csv:, items_csv:)

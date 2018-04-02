@@ -1,7 +1,7 @@
 require 'bigdecimal'
 require 'bigdecimal/util'
 
-module AmazonCsvCombiner
+module AmazonPurchasesLedger
   class Shipment
     def initialize(items_csv:, order_csv_row:)
       @items_csv = items_csv
@@ -22,16 +22,9 @@ module AmazonCsvCombiner
     end
 
     def items
-      AmazonCsvCombiner::Item::Factory.new(carrier_tracking: @order_csv_row[:carrier_name__tracking_number],
-                                           items_csv: @items_csv)
+      AmazonPurchasesLedger::Item::Factory.new(carrier_tracking: @order_csv_row[:carrier_name__tracking_number],
+                                               items_csv: @items_csv)
         .items
     end
   end
-
-
-# subtotal
-# shipping_charge
-# total_promotions
-# tax charged
-# total_charged
 end

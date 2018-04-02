@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "amazon_purchases_ledger"
+
+AmazonPurchasesLedger::CLI.start(ARGV)

@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require "amazon_csv_combiner"
-
-AmazonCsvCombiner::CLI.start(ARGV)
