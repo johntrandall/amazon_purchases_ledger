@@ -12,12 +12,8 @@ module AmazonPurchasesLedger
       [
         "Shipment: #{@order_csv_row[:carrier_name__tracking_number]}",
         items.map { |item| item.output_text },
-      ].join("\n")
-    end
-
-    def total_charged
-      return nil unless @order_csv_row[:total_charged]
-      @order_csv_row[:total_charged].gsub('$', '').to_d
+        promotions_text
+      ].compact.join("\n")
     end
 
     def items
@@ -25,5 +21,16 @@ module AmazonPurchasesLedger
                                                items_csv: @items_csv)
         .items
     end
+
+    def total_charged
+      return nil unless @order_csv_row[:total_charged]
+      @order_csv_row[:total_charged].gsub('$', '').to_d
+    end
+
+    private
+    def promotions_text
+      "* [#{@order_csv_row[:total_promotions]}] Promotions Credit" unless @order_csv_row[:total_promotions] == '$0.00'
+    end
+
   end
 end
