@@ -32,7 +32,7 @@ module AmazonPurchasesLedger
     end
 
     def memo
-      shipments.map(&:output_text).join("\n")
+      shipments.map(&:output_text).join("\n----------------------\n")
     end
 
     def shipments

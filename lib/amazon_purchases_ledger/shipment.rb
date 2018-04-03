@@ -12,7 +12,6 @@ module AmazonPurchasesLedger
       [
         "Shipment: #{@order_csv_row[:carrier_name__tracking_number]}",
         items.map { |item| item.output_text },
-        '----------------------'
       ].join("\n")
     end
 

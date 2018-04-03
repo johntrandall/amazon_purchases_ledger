@@ -17,7 +17,6 @@ RSpec.describe AmazonPurchasesLedger::Shipment do
     it 'includes the things' do
       expect(subject.output_text).to include('Shipment: AMZN_US(TB')
       expect(subject.output_text.scan(/\* \$/).count).to eq(1)
-      expect(subject.output_text).to include('--------------------')
     end
   end
 
