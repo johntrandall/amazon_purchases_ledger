@@ -13,6 +13,7 @@ module AmazonPurchasesLedger
     end
 
     OUTPUT_HEADER_ROW = [
+      :order_id,
       :order_date,
       :payment_account,
       :amount,
@@ -22,6 +23,7 @@ module AmazonPurchasesLedger
     def output_row
       return nil if shipments.any? { |shipment| shipment.total_charged.nil? }
       [
+        @order_id,
         order_date,
         payment_account,
         amount,
