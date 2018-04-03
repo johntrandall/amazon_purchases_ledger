@@ -1,3 +1,5 @@
+ENV['TEST']='TRUE'
+
 require "bundler/setup"
 require "amazon_purchases_ledger"
 require 'pry'

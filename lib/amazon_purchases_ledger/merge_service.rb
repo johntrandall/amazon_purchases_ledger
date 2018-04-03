@@ -11,7 +11,6 @@ module AmazonPurchasesLedger
 
     # TODO: Fix filepath (strings are not paths). Also, make this cross platform.
     def perform
-      filepath_string = "#{Dir.home}/Desktop/amazon_transactions_#{timestamp}.csv"
       puts "Outputting file to #{filepath_string}"
       CSV.open(filepath_string, "wb") do |csv|
         csv << output_header_row
@@ -40,6 +39,18 @@ module AmazonPurchasesLedger
     end
 
     private
+    def filepath_string
+      [directory, filename].compact.join('/')
+    end
+
+    def directory
+      ENV['TEST'] ? nil : Dir.home
+    end
+
+    def filename
+      "amazon_transactions_#{timestamp}.csv"
+    end
+
     def timestamp
       Time.now.strftime('%Y-%m-%d_%H-%M-%S')
     end
