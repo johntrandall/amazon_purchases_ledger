@@ -11,7 +11,9 @@ module AmazonPurchasesLedger
 
     # TODO: Fix filepath (strings are not paths). Also, make this cross platform.
     def perform
-      CSV.open("#{Dir.home}/Desktop/amazon_transactions_#{timestamp}.csv", "wb") do |csv|
+      filepath_string = "#{Dir.home}/Desktop/amazon_transactions_#{timestamp}.csv"
+      puts "Outputting file to #{filepath_string}"
+      CSV.open(filepath_string, "wb") do |csv|
         csv << output_header_row
         orders.each do |order|
           csv << order.output_row

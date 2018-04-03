@@ -14,7 +14,7 @@ module AmazonPurchasesLedger
 
       private
       def order_ids
-        @orders_csv[:order_id]
+        @orders_csv[:order_id].uniq
       end
     end
   end
