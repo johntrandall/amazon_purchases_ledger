@@ -44,7 +44,7 @@ After installing, bundle should be available at the command line via
 
 Pass in the filepaths to an Amazon orders csv and an Amazon items csv, and the gem will create a ```transactions.csv``` in the user's home folder:
 
-    $ amazon_purchases_ledger [orders csv filepath] [items csv filepath]
+    $ amazon_purchases_ledger merge [orders csv filepath] [items csv filepath]
 
 
 ## Development
